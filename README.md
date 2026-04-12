@@ -13,4 +13,4 @@ A escolha por uma solução Web (Angular + Node.js) visa a acessibilidade univer
 Os requisitos detalhados estão disponíveis em [docs/requirements.md](docs/requirements.md).
 
 ## 📊 Diagrama de Casos de Uso
-![Casos de Uso](docs/uml-use-case)
+![Casos de Uso](docs/uml-use-case.png)
