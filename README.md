@@ -10,7 +10,7 @@ Uma **aplicação Web Full-Stack** composta por um dashboard administrativo para
 A escolha por uma solução Web (Angular + Node.js) visa a acessibilidade universal sem necessidade de instalação, facilitando o uso tanto para administradores em desktops quanto para doadores em navegadores mobile.
 
 ## 📋 Requisitos do Sistema
-Os requisitos detalhados estão disponíveis em [docs/requisitos.md](docs/requisitos.md).
+Os requisitos detalhados estão disponíveis em [docs/requirements.md](docs/requirements.md).
 
 ## 📊 Diagrama de Casos de Uso
 ![Casos de Uso](docs/uml-use-case)
