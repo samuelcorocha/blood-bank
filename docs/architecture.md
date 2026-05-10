@@ -1,10 +1,10 @@
 # Projeto Arquitetural - Sistema de Gestão de Hemocentro
 
 ## 🛠 Escolhas de Tecnologias
-- **Frontend:** Angular (Framework SPA que permite uma interface administrativa rica e reativa).
-- **Backend:** Node.js com NestJS (Escalabilidade e tipagem forte com TypeScript, ideal para regras de negócio de saúde).
-- **Banco de Dados:** PostgreSQL (Relacional, garantindo a integridade dos dados de doadores e estoques).
-- **Autenticação:** JWT (JSON Web Tokens) para comunicação segura entre Front e Back.
+- **Frontend:** SPA em JavaScript puro, servida pelo backend, para reduzir a complexidade do primeiro entregável.
+- **Backend:** Node.js com Express, por simplicidade e rapidez de entrega no TP3.
+- **Banco de Dados:** SQLite, por ser relacional, leve e permitir persistência local sem dependências externas.
+- **Autenticação:** token de sessão persistido no banco, suficiente para o MVP do sprint.
 
 ## 🏗 Projeto Arquitetural (C4 Model)
 Escolhemos o C4 Model para representar a arquitetura por níveis de detalhamento.
@@ -14,24 +14,24 @@ O sistema de Hemocentro interage com o Doador (via Web), o Administrador e, futu
 
 ### Nível 2: Diagrama de Contêineres
 A aplicação é dividida em:
-1. **Web Application (Angular):** Interface do usuário.
-2. **API Application (NestJS):** Lógica de negócio e rotas.
-3. **Database (PostgreSQL):** Persistência de dados.
+1. **Web Application (SPA em JavaScript):** Interface do usuário.
+2. **API Application (Express):** Lógica de negócio e rotas REST.
+3. **Database (SQLite):** Persistência relacional local.
 
 ## ⚖️ Justificativa do Modelo
-O modelo escolhido foca na separação de responsabilidades (SoC). O uso de uma arquitetura de contêineres permite que o frontend e o backend evoluam de forma independente, facilitando a manutenção e futuros testes automatizados exigidos nos TPs seguintes.
+O modelo escolhido foca na separação de responsabilidades (SoC). O uso de uma arquitetura de contêineres permite que o frontend e o backend evoluam de forma independente, facilitando a manutenção e a evolução para as próximas sprints.
 
 ```mermaid
 graph TD
     subgraph "Sistema de Gestão de Hemocentro"
-        WebApp[Web Application - Angular]
-        API[API Application - NestJS]
-        DB[(Database - PostgreSQL)]
+        WebApp[Web Application - SPA JavaScript]
+        API[API Application - Express]
+        DB[(Database - SQLite)]
     end
 
     User((Doador)) -- "Acessa dashboard e perfil" --> WebApp
-    Admin((Administrador)) -- "Gere estoque e doadores" --> WebApp
-    
+    Admin((Administrador)) -- "Gerencia estoque e doadores" --> WebApp
+
     WebApp -- "Consome dados via JSON/HTTPS" --> API
     API -- "Lê/Escreve dados (SQL)" --> DB
 

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blood Bank | Gestão de Hemocentro</title>
+    <meta name="description" content="Dashboard para gestão de estoque e área do doador." />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="orb orb-left"></div>
+    <div class="orb orb-right"></div>
+
+    <main class="shell">
+      <section class="hero card">
+        <div class="hero-copy">
+          <span class="eyebrow">ODS 3 · Saúde e Bem-Estar</span>
+          <h1>Gestão de hemocentro com foco em estoque e doadores aptos.</h1>
+          <p>
+            Acompanhe níveis críticos de sangue, autentique administradores e doadores e consulte a próxima data de
+            aptidão para doação em uma aplicação web única.
+          </p>
+          <div class="hero-badges">
+            <span>API REST</span>
+            <span>SPA</span>
+            <span>SQLite</span>
+          </div>
+        </div>
+
+        <div class="login-panel">
+          <h2>Acesso rápido</h2>
+          <p>Use as credenciais de demonstração abaixo para explorar o sistema.</p>
+          <div class="demo-grid">
+            <button class="demo-chip" data-fill="admin">Entrar como admin</button>
+            <button class="demo-chip" data-fill="donor">Entrar como doador</button>
+          </div>
+          <form id="login-form" class="login-form">
+            <label>
+              <span>Email</span>
+              <input id="email" name="email" type="email" placeholder="admin@hemocentro.local" required />
+            </label>
+            <label>
+              <span>Senha</span>
+              <input id="password" name="password" type="password" placeholder="admin123" required />
+            </label>
+            <button type="submit" class="primary">Entrar</button>
+          </form>
+          <p class="helper">
+            Admin: admin@hemocentro.local / admin123<br />
+            Doador: ana@doadores.local / donor123
+          </p>
+        </div>
+      </section>
+
+      <section class="card status-grid">
+        <article>
+          <span class="stat-label">Tipos monitorados</span>
+          <strong id="bloodTypesCount">--</strong>
+        </article>
+        <article>
+          <span class="stat-label">Alertas críticos</span>
+          <strong id="criticalCount">--</strong>
+        </article>
+        <article>
+          <span class="stat-label">Doadores cadastrados</span>
+          <strong id="donorsCount">--</strong>
+        </article>
+      </section>
+
+      <section class="card urgency-card">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Mural de urgências</span>
+            <h2>Tipos sanguíneos em nível crítico</h2>
+          </div>
+          <span class="pill" id="publicStatus">Atualizando</span>
+        </div>
+        <div id="urgentList" class="card-list"></div>
+      </section>
+
+      <section id="dashboard" class="card dashboard hidden">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Painel autenticado</span>
+            <h2 id="dashboardTitle">Dashboard</h2>
+          </div>
+          <button id="logoutBtn" class="secondary">Sair</button>
+        </div>
+
+        <div id="dashboardContent"></div>
+      </section>
+
+      <p id="message" class="message"></p>
+    </main>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>

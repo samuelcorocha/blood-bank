@@ -14,3 +14,21 @@ Os requisitos detalhados estão disponíveis em [docs/requirements.md](docs/requ
 
 ## 📊 Diagrama de Casos de Uso
 ![Casos de Uso](docs/uml-use-case.png)
+
+## 🚀 TP3 - Estado Atual
+O repositório já possui um primeiro entregável funcional com:
+
+- API REST para login, consulta de urgências e dashboard;
+- interface SPA para administrador e doador;
+- persistência local em SQLite;
+- pasta [Videos](Videos) criada para armazenar a demonstração do sprint.
+
+### Como executar
+1. Instale Node.js 20+.
+2. Rode `npm install`.
+3. Inicie a aplicação com `npm start`.
+4. Acesse `http://localhost:3000`.
+
+### Credenciais de demonstração
+- Admin: `admin@hemocentro.local` / `admin123`
+- Doador: `ana@doadores.local` / `donor123`
